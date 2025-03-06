@@ -1,0 +1,28 @@
+.contenedor-titulo {
+    width: 400px;
+}
+
+.titulo {
+    color: #283250;
+    font-weight: bolder;
+}
+
+.tarjeta-contacto{
+    width: 250px;
+    background-color: #EEEFF4;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.icono-tarjeta-contacto{
+    font-size: 50px;
+    color: #283250;
+}
+
+.titulo-tarjeta-contacto{
+    color: #283250;
+}
