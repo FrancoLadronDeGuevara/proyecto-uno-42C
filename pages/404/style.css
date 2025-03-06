@@ -1,1 +1,11 @@
-.error{}
+.error-404{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #283250;
+    padding: 20px;
+}
+
+.icono-404{
+    font-size: 150px;
+}
