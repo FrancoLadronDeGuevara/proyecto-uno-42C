@@ -26,3 +26,23 @@
 .titulo-tarjeta-contacto{
     color: #283250;
 }
+
+.texto-footer{
+    font-size: 12px;
+    color: #283250;
+}
+
+.separador-footer{
+    color: #283250;
+}
+
+.tyc-footer{
+    text-decoration: none;
+    color: #283250;
+    font-weight: bold;
+}
+
+.icono-footer{
+    font-size: 50px;
+    color: #283250;
+}
