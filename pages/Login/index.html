@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@
     />
     <!--CSS-->
     <link rel="stylesheet" href="./style.css" />
-    <title>Pagina principal</title>
+    <title>Iniciar Sesión</title>
   </head>
   <body>
     <!-------------------------- NAVBAR ---------------------------------------->
@@ -34,8 +34,8 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="./index.html">
-            <img src="./assets/logo.png" alt="Logo" width="64"/>
+          <a class="navbar-brand" href="../../index.html">
+            <img src="../../assets/logo.png" alt="Logo" width="64" />
           </a>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -78,13 +78,12 @@
               </li>
             </ul>
             <div class="d-flex flex-column flex-lg-row">
-              <a id="btnIniciarSesion" href="./pages/Login/index.html" type="button" class="btn btn-primary">Iniciar Sesión</a>
-              <a id="btnRegistrarse" href="./pages/Registro/index.html" type="button" class="btn btn-success my-2 my-lg-0 ms-lg-2">Registrarse</a>
-              <div class="d-flex flex-column flex-lg-row">
-                <a href="./pages/Admin/index.html" id="btnPanelControl" class="btn btn-dark d-none">Panel de control</a>
-                <a id="btnBienvenida" class="btn btn-outline-primary disabled d-none">Bienvenido de nuev@!</a>
-                <a id="btnCerrarSesion" class="btn btn-outline-danger my-2 my-lg-0 ms-lg-2 d-none">Cerrar Sesión</a>
-              </div>
+              <a
+                href="../Registro/index.html"
+                type="button"
+                class="btn btn-success my-2 my-lg-0 ms-lg-2"
+                >Registrarse</a
+              >
             </div>
           </div>
         </div>
@@ -92,15 +91,70 @@
     </header>
     <!-------------------------- FIN NAVBAR ---------------------------------------->
 
-    <section style="height: 500px">SECCION 1</section>
-    <section style="height: 500px">SECCION 2</section>
+    <!-------------------------- LOGIN ---------------------------------------->
+    <div class="container-login">
+      <div class="wrapper bg-white">
+        <div class="h2 text-center">Iniciar Sesi&oacute;n</div>
+        <form id="formulario" class="pt-3">
+          <div class="form-group py-2">
+            <div class="input-field">
+              <i class="bi bi-person-fill p-2"></i>
+              <input
+                id="inputEmail"
+                type="email"
+                placeholder="Ingrese su correo"
+                required
+                class=""
+              />
+            </div>
+          </div>
+          <div class="form-group py-1 pb-2">
+            <div class="input-field">
+              <i class="bi bi-lock-fill p-2"></i>
+              <input
+                id="inputPassword"
+                type="password"
+                placeholder="Ingrese su contraseña"
+                required
+                class=""
+              />
+              <button class="btn bg-white text-muted">
+                <span class="far fa-eye-slash"></span>
+              </button>
+            </div>
+          </div>
+          <div class="d-flex align-items-start">
+            <div class="d-flex align-items-center gap-3">
+              <input type="checkbox" name="checkbox" id="inputCheckbox">
+              <label class="text-muted">
+                Recuerdame
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="ms-auto">
+              <a href="#" id="forgot">Olvidaste tu contraseña?</a>
+            </div>
+          </div>
+          <button type="submit" id="btnIniciarSesion" class="btn btn-block text-center my-3">
+            Iniciar Sesi&oacute;n
+          </button>
+          <div class="text-center pt-3 text-muted">
+            No tienes una cuenta?
+            <a href="../Registro/index.html">Registrarse</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-------------------------- FIN LOGIN ---------------------------------------->
 
     <!-------------------------- FOOTER ---------------------------------------->
     <footer class="bg-body-tertiary p-2">
-      <div class="d-flex flex-column flex-sm-row align-items-center justify-content-around">
+      <div
+        class="d-flex flex-column flex-sm-row align-items-center justify-content-around"
+      >
         <div>
-          <img src="./assets/logo.png" alt="Logo" width="150" />
-          <a class="tyc-footer" href="./pages/404/index.html"
+          <img src="/assets/logo.png" alt="Logo" width="150" />
+          <a class="tyc-footer" href="../404/index.html"
             >Términos y condiciones</a
           >
         </div>
@@ -122,7 +176,6 @@
     </footer>
     <!-------------------------- FIN FOOTER ---------------------------------------->
   </body>
-
   <!-- CDN BOOTSTRAP JS -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -130,5 +183,5 @@
     crossorigin="anonymous"
   ></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="./js/index.js"></script>
+  <script src="/js/login.js"></script>
 </html>
