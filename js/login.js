@@ -24,7 +24,6 @@ if (usuarioLogueado || adminLogueado) {
 const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")); //Recuperamos la lista de usuarios de localStorage
 
 const formulario = document.getElementById("formulario"); //Recuperamos el formulario
-const btnIniciarSesion = document.getElementById("btnIniciarSesion"); //Recuperamos el boton de iniciar sesion
 
 formulario.addEventListener("submit", (e) => {
   //Evento submit del formulario
