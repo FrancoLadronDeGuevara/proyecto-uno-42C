@@ -1,25 +1,11 @@
-const usuarioLogueado =
-  JSON.parse(localStorage.getItem("usuarioLogueado")) || false; //Si existe usuarioLogueado en localStorage, la guardamos en la variable usuarioLogueado de lo contrario la inicializamos false
-const adminLogueado =
-  JSON.parse(localStorage.getItem("adminLogueado")) || false; //Si existe adminLogueado en localStorage, la guardamos en la variable adminLogueado de lo contrario la inicializamos false
+verificarUsuarioLogueado()
 
-if (usuarioLogueado || adminLogueado) {
-  // Si el usuario esta logueado o el admin esta logueado
-  Swal.fire({
-    //Mostramos una alerta
-    icon: "warning",
-    text: "Ya estas logueado",
-    toast: true,
-    position: "bottom-start",
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-  });
+const btnMostrar = document.getElementById("btnMostrar"); //Recuperamos el boton de mostrar
 
-  setTimeout(() => {
-    window.location.href = "../../index.html"; //Redirigimos a la pagina principal despues de 3 segundos
-  }, 3000);
-}
+btnMostrar.addEventListener("click", () => {
+  //Evento click del boton de mostrar
+  mostrarPassword("inputPassword", "btnIcono"); //Llamamos a la funcion mostrarPassword
+});
 
 const listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")); //Recuperamos la lista de usuarios de localStorage
 
@@ -48,16 +34,7 @@ formulario.addEventListener("submit", (e) => {
 
   if (!usuarioValido) {
     //Si el usuario no es valido
-    Swal.fire({
-      // Mostramos una alerta de error
-      icon: "error",
-      text: "El correo o la contraseña son incorrectos",
-      toast: true,
-      position: "bottom-start",
-      showConfirmButton: false,
-      timer: 3000,
-      timerProgressBar: true,
-    });
+    alertaError("El email o la contraseña son incorrectos");
     return; //Retornamos
   }
 
@@ -67,15 +44,7 @@ formulario.addEventListener("submit", (e) => {
 });
 
 function mensajeBienvenido() {
-  Swal.fire({
-    icon: "success",
-    text: "Bienvenido",
-    toast: true,
-    position: "bottom-start",
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-  });
+  alertaExitosa("Bienvenido!");
 
   setTimeout(() => {
     window.location.href = "../../index.html";
