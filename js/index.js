@@ -15,6 +15,15 @@ let listaUsuariosPredeterminada = [
 ];
 
 const usuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || []; //Si existe listaUsuarios en localStorage, la guardamos en la variable usuarios de lo contrario la inicializamos []
+
+if (usuarios.length === 0) {
+  //Si la lista de usuarios esta vacia la inicializamos con la lista predeterminada
+  localStorage.setItem(
+    "listaUsuarios",
+    JSON.stringify(listaUsuariosPredeterminada)
+  );
+}
+
 const usuarioLogueado =
   JSON.parse(localStorage.getItem("usuarioLogueado")) ||
   JSON.parse(sessionStorage.getItem("usuarioLogueado")) ||
@@ -30,14 +39,6 @@ const btnRegistrarse = document.getElementById("btnRegistrarse");
 const btnPanelControl = document.getElementById("btnPanelControl");
 const btnBienvenida = document.getElementById("btnBienvenida");
 const btnCerrarSesion = document.getElementById("btnCerrarSesion");
-
-if (usuarios.length === 0) {
-  //Si la lista de usuarios esta vacia la inicializamos con la lista predeterminada
-  localStorage.setItem(
-    "listaUsuarios",
-    JSON.stringify(listaUsuariosPredeterminada)
-  );
-}
 
 if (usuarioLogueado) {
   //Si el usuario esta logueado
@@ -72,6 +73,8 @@ btnCerrarSesion.addEventListener("click", () => {
       });
       localStorage.removeItem("adminLogueado"); //Eliminamos el adminLogueado de localStorage
       localStorage.removeItem("usuarioLogueado"); //Eliminamos el usuarioLogueado de localStorage
+      sessionStorage.removeItem("adminLogueado"); //Eliminamos el adminLogueado de sessionStorage
+      sessionStorage.removeItem("usuarioLogueado"); //Eliminamos el usuarioLogueado de sessionStorage
       setTimeout(() => {
         window.location.reload(); // Recargamos la pagina despues de 2 segundos
       }, 2000);
